@@ -1,0 +1,25 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gustavo13132/Ecommerce.git"
+  },
+  "author": "Gustavo Gonzaga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gustavo13132/Ecommerce/issues"
+  },
+  "homepage": "https://github.com/Gustavo13132/Ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1",
+    "nodemon": "^2.0.15"
+  }
+}

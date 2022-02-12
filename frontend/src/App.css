@@ -1,0 +1,20 @@
+header {
+  background-color: #243a5e;
+  display: flex;
+}
+header a {
+  color: white;
+  margin: 10px;
+}
+.cart-icon {
+  height: 30px;
+  width: 30px;
+  margin-left: 1300%;
+}
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: #243a5e;
+  width: 100%;
+  text-align: center;
+}

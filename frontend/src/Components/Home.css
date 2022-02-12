@@ -1,0 +1,15 @@
+.Home {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 50%;
+    max-width: 300px;
+    margin: 10px;
+}
+.Home img {
+    width: 100%;
+    border-radius: 10px;
+}
+.responsive {
+    display: flex;
+    flex-wrap: wrap;
+}
