@@ -7,3 +7,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
 }
+.btn {
+  margin: 5px;
+}
+#margin {
+  margin: 5px;
+}
+.nada {
+  text-decoration: none;
+}
+h2 {
+  color: black;
+}
+.price {
+  color: rgb(21, 167, 21);
+  font-weight: bold;
+}
+.ProductScreen {
+  display: flex;
+  flex-wrap: wrap
+}
+.img-desc {
+  max-width: 900px;
+  margin: 5px;
+}
+.img-p {
+  width: 100%;
+  margin: 5px;
+}
+.success {
+  color: rgb(21, 167, 21);
+  font-size: large;
+}
+.prices {
+  font-size: x-large;
+}
+.info-p {
+  border: 1px solid orange;
+  width: 40%;
+  margin: 5px;
+  height: fit-content;
+}
+.btn {
+  width: 96%;
+}
