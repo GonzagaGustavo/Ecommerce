@@ -17,7 +17,7 @@ const params = useParams()
     <div className='ProductScreen'>
         <div className='img-desc'>
         <img className='img-p' src={data.image} alt="" />
-        <p>{data.descricao}</p>
+        <p className='descricao'>{data.descricao}</p>
         </div>
         <div className='info-p'>
             <h1>{data.name}</h1>

@@ -20,9 +20,10 @@ function Home() {
       {products.map((product) => (
           <div className="Home" key={product.id}>
             <a className="nada" href={`/Produto/${product.id}`}>
-            <img src={product.image} alt="" />
+            <img src={product.image} alt="" className="img-home"/>
             <h2>{product.name}</h2>
             <p className="price">R${product.price}</p>
+            <p className="opacity">{product.descricao}</p>
             </a>
           </div>
       ))}

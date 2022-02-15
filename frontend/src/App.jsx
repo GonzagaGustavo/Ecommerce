@@ -7,6 +7,7 @@ import ListadeProdutos from './Components/ListadeProdutos';
 import CriarProduto from './Components/CriarProduto';
 import ProductScreen from './Components/ProductScreen';
 import EditarProduto from './Components/EditarProduto';
+import CriarUsuario from './Usuario/CriarUsuario';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path='/CriarProduto' exact element={<CriarProduto />}></Route>
         <Route path='/Produto/:id' exact element={<ProductScreen />}></Route>
         <Route path='/EditarProduto/:id' exact element={<EditarProduto />}></Route>
+        <Route path='/CriarConta' exact element={<CriarUsuario />}></Route>
       </Routes>
       <footer>
         <BiCopyright />

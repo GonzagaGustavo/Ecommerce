@@ -75,14 +75,14 @@ router.post("/atualizaProduto", (req, res) => {
     },
     (err) => {
       if (!err) {
-        res.send("Usuario Editado");
+        res.send("Produto Editado");
       } else {
         res.send(err);
       }
     }
   );
 });
-router.post("deleteProduto", (req, res) => {
+router.post("/deleteProduto", (req, res) => {
     ModeloProducts.findOneAndDelete({id: req.body.id},(err) => {
         if (!err) {
             res.send("Produto excluido");

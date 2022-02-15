@@ -13,3 +13,14 @@
     display: flex;
     flex-wrap: wrap;
 }
+.opacity {
+    display: none;
+}
+.Home:hover .opacity{
+    display: grid;
+    color: black;
+}
+.img-home {
+    min-height: 220px;
+    max-height: 220px;
+}

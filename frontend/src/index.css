@@ -51,3 +51,14 @@ h2 {
 .btn {
   width: 96%;
 }
+.descricao {
+  font-size: large;
+}
+@media only screen and (max-device-width: 850px) {
+  .info-p {
+    width: 100%;
+  }
+  .img-p {
+    width: 100%;
+  }
+}

@@ -22,6 +22,7 @@ function ListadeProdutos() {
   return (
     <div>
         <Link to="../CriarProduto"><button className="btn btn-success">Criar Produto</button></Link>
+        <div className="flex">
       {products.map((product) => (
         <div className="Home" key={product.id}>
           <img src={product.image} alt="" />
@@ -31,6 +32,7 @@ function ListadeProdutos() {
           <button className="btn btn-danger" onClick={() => {deleteProduto(product.id)}}>Deletar</button>
         </div>
       ))}
+      </div>
     </div>
   );
 }

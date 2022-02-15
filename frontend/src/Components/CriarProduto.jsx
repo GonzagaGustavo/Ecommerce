@@ -5,6 +5,7 @@ import uniqid from "uniqid";
 function CriarProduto() {
   const [name, setName] = useState("");
   const [colecao, setColecao] = useState("");
+  const [image, setImage] = useState("")
   const [price, setPrice] = useState(0);
   const [descricao, setDescricao] = useState("");
   const [countInStock, setCountInStock] = useState(0);
@@ -13,8 +14,7 @@ function CriarProduto() {
     let produto = {
       name: name,
       colecao: colecao,
-      image:
-        "https://s2.glbimg.com/RYs9wpk7XtUjqLz5dhtINWfBRJ0=/smart/e.glbimg.com/og/ed/f/original/2017/06/30/banco3.jpg",
+      image: image,
       price: price,
       descricao: descricao,
       countInStock: countInStock,
@@ -47,6 +47,8 @@ function CriarProduto() {
         value={colecao}
         onChange={(e) => setColecao(e.target.value)}
       />
+      <input type="text" placeholder="Link da imagem do produto" className="form-control" id="margin" value={image}
+        onChange={(e) => setImage(e.target.value)} />
       <div className="input-group mb-3">
         <span className="input-group-text">R$</span>
         <span className="input-group-text">{price}</span>
