@@ -54,6 +54,17 @@ h2 {
 .descricao {
   font-size: large;
 }
+.inputs {
+  place-items: center;
+  display: grid;
+}
+.form-control {
+  width: 80%;
+}
+#btnLg {
+  width: 60%;
+}
+
 @media only screen and (max-device-width: 850px) {
   .info-p {
     width: 100%;

@@ -50,6 +50,7 @@ function criaruser() {
         ):(
             <p></p>
         )}
+        <div className='inputs'>
         <input type="text" placeholder='Insira seu nome' className='form-control' id='margin' 
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -67,7 +68,7 @@ function criaruser() {
         onChange={(e) => setSenha(e.target.value)}
         />
         <button className='btn btn-success' onClick={criaruser}>Criar Conta!</button>
-
+        </div>
     </div>
   )
 }

@@ -9,7 +9,6 @@ header a {
 .cart-icon {
   height: 30px;
   width: 30px;
-  margin-left: 1300%;
 }
 footer {
   position: relative;
@@ -17,4 +16,17 @@ footer {
   background-color: #243a5e;
   width: 100%;
   text-align: center;
+}
+.signin {
+  position: absolute;
+  right: 0;
+}
+.user-icon {
+  width: 30px;
+  height: 30px;
+}
+.signin-1 {
+  position: absolute;
+  right: 0;
+  text-decoration: none;
 }

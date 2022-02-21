@@ -15,12 +15,23 @@
 }
 .opacity {
     display: none;
+    transition: 1s ease-out;
 }
 .Home:hover .opacity{
     display: grid;
     color: black;
+    transition: 1s ease-out;
 }
 .img-home {
     min-height: 220px;
     max-height: 220px;
+}
+#center {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.spinner-border {
+    width: 100px;
+    height: 100px;
 }
