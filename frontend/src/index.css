@@ -73,3 +73,11 @@ h2 {
     width: 100%;
   }
 }
+.alert {
+  width: 90%;
+  text-align: center;
+}
+#a {
+  display: grid;
+  place-items: center;
+}

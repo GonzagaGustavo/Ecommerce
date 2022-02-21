@@ -54,7 +54,7 @@ routerUser.post(
         return
       }
     }
-    res.status(401).send({ message: "Email ou senha invalidos" })
+    res.send("err")
   })
 );
 

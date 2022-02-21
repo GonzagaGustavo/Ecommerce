@@ -13,7 +13,11 @@ import FazerLogin from './Usuario/FazerLogin';
 
 function App() {
   const userInfo = localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo')):null
-  console.log(userInfo)
+  
+  const signoutHandler= () => {
+    localStorage.removeItem('userInfo')
+    window.location.href = 'http://localhost:3000/'
+  }
   return (
     <BrowserRouter>
     <div className="App">
@@ -24,7 +28,12 @@ function App() {
         <a href="/Cart"><AiOutlineShoppingCart className='cart-icon'/></a>
         {
           userInfo? (
-            <a className='signin-1' href="#">{userInfo.name} <BiUserCheck className='user-icon'/></a>
+            <div id='dropdown'>
+            <a className='signin-1' href="#">{userInfo.name}{' '} <BiUserCheck className='user-icon'/></a>
+            <ul className='dropdown-content'>
+              <a href="#signout" onClick={signoutHandler}>Sair</a>
+            </ul>
+            </div>
           ) : (
             <a className='signin' href="/FacaoLogin">Entrar</a>
           )
