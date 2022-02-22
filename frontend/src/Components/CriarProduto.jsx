@@ -44,7 +44,8 @@ function CriarProduto() {
         placeholder="Coleção do produto"
         className="form-control"
         id="margin"
-        value={colecao}
+        readOnly="o"
+        value={"Nenhuma"}
         onChange={(e) => setColecao(e.target.value)}
       />
       <input type="text" placeholder="Link da imagem do produto" className="form-control" id="margin" value={image}

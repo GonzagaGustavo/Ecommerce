@@ -10,12 +10,14 @@ import ProductScreen from './Components/ProductScreen';
 import EditarProduto from './Components/EditarProduto';
 import CriarUsuario from './Usuario/CriarUsuario';
 import FazerLogin from './Usuario/FazerLogin';
+import Cart from './Components/Cart';
 
 function App() {
   const userInfo = localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo')):null
-  
+
   const signoutHandler= () => {
     localStorage.removeItem('userInfo')
+    localStorage.removeItem('cartItem')
     window.location.href = 'http://localhost:3000/'
   }
   return (
@@ -29,7 +31,7 @@ function App() {
         {
           userInfo? (
             <div id='dropdown'>
-            <a className='signin-1' href="#">{userInfo.name}{' '} <BiUserCheck className='user-icon'/></a>
+            <a className='signin-1' href="#">{userInfo.name}<BiUserCheck className='user-icon'/></a>
             <ul className='dropdown-content'>
               <a href="#signout" onClick={signoutHandler}>Sair</a>
             </ul>
@@ -47,6 +49,7 @@ function App() {
         <Route path='/EditarProduto/:id' exact element={<EditarProduto />}></Route>
         <Route path='/CriarConta' exact element={<CriarUsuario />}></Route>
         <Route path='/FacaoLogin' exact element={<FazerLogin />}></Route>
+        <Route path='/Cart' exact element={<Cart />}></Route>
       </Routes>
       <footer>
         <BiCopyright />

@@ -47,6 +47,8 @@ h2 {
   width: 40%;
   margin: 5px;
   height: fit-content;
+  display: grid;
+  place-items: center;
 }
 .btn {
   width: 96%;
@@ -80,4 +82,13 @@ h2 {
 #a {
   display: grid;
   place-items: center;
+}
+.cart-img {
+  max-height: 150px;
+  min-width: 300px;
+}
+.container {
+  display: grid;
+  place-items: center;
+  background-color: rgb(250, 233, 211);
 }

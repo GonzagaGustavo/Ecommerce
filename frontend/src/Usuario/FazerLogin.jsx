@@ -13,6 +13,7 @@ function FazerLogin() {
     };
     axios.post("/usuarios/login", login).then((res) => {
       if (res.data === "err") {
+        console.log("Oi")
         setErr("err")
       } else {
         console.log(res.data);
@@ -21,6 +22,11 @@ function FazerLogin() {
       }
     });
   }
+  document.addEventListener("keypress", (e) => {
+    if(e.keyCode === 13) {
+      findUser()
+    }
+  })
   return (
     <div>
       <h1>Fazer login</h1>

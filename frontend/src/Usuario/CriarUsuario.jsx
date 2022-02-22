@@ -35,7 +35,7 @@ function criaruser() {
 
   return (
     <div>
-        <h1 className='bv'>Olá seja Bem-vindo a minha loja!</h1>
+        <h1 className='bv'>Olá seja Bem-vindo!</h1>
         {tem === "Usuario criado!" ? (
             <div class="alert alert-primary" role="alert">
             Usuario Criado!
