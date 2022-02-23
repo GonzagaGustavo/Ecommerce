@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { cartContext } from "../Context";
 
 function Cart() {
-  const cart = localStorage.getItem("cartItem")
-    ? JSON.parse(localStorage.getItem("cartItem"))
-    : null;
+
+  // useEffect(() => {
+  //   setCart(localStorage.getItem("cartItem")
+  //   ? JSON.parse(localStorage.getItem("cartItem"))
+  //   : null)
+  // }, [])
+const { cart } = useContext(cartContext)
 console.log(cart)
-  if (cart === null) {
+
+  if (cart === []) {
     return (
       <div>
         <h1>Nenhum item no carrinho</h1>
@@ -15,6 +21,13 @@ console.log(cart)
   } else {
     return (
       <>
+        {cart.map((item) => (
+          <div key={item.id}>
+            <p>{item.id}</p>
+            <p>{item.name}</p>
+          </div>
+        ))}
+      {/* </div>
         <div class="container">
           <img src={cart.image} alt="" className="cart-img" />
           <div class="row align-items-end">
@@ -23,7 +36,7 @@ console.log(cart)
             <div class="col">{cart.descricao}</div>
           </div>
         </div>
-        <button className="btn btn-success" id="margin">Finalizar Compra</button>
+        <button className="btn btn-success" id="margin">Finalizar Compra</button> */}
       </>
     );
   }
