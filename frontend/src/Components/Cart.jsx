@@ -1,13 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { cartContext } from "../Context";
 
 function Cart() {
 
-  // useEffect(() => {
-  //   setCart(localStorage.getItem("cartItem")
-  //   ? JSON.parse(localStorage.getItem("cartItem"))
-  //   : null)
-  // }, [])
 const { cart } = useContext(cartContext)
 console.log(cart)
 

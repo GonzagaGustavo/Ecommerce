@@ -12,8 +12,9 @@ const userInfo = localStorage.getItem("userInfo")
 
 const addCart = (data) => {
     if (userInfo != null) {
-      setCart([...cart, {id: data.id, name: data.name}])
-      // setId([...id, { id: data.id, name: data.name }]);
+        const item = {id: data.id, name: data.name}
+      setCart([...cart, item])
+      localStorage.setItem('cartConst', cart)
     } else {
       setErr(true);
     }
