@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { cartContext } from "../Context";
 
 function ProductScreen() {
-const [data, setData] = useState([]);
-const params = useParams();
-const { err, addCart} = useContext(cartContext)
+  const [data, setData] = useState([]);
+  const params = useParams();
+  const userInfo = localStorage.getItem("userInfo")
+    ? JSON.parse(localStorage.getItem("userInfo"))
+    : null;
+  const [err, setErr] = useState(false);
 
   useEffect(() => {
     axios.post("/api/dataProducts", { id: params.id }).then((res) => {
@@ -14,21 +16,13 @@ const { err, addCart} = useContext(cartContext)
       setData(res.data[0]);
     });
   }, []);
-
-const [id, setId] = useState([]);
-
-  // function addCart() {
-  //   if (userInfo != null) {
-  //     setCart({id: data.id, name: data.name})
-  //     // setId([...id, { id: data.id, name: data.name }]);
-  //   } else {
-  //     setErr(true);
-  //   }
-  // }
-
-  useEffect(() => {
-    localStorage.setItem("cartItem", JSON.stringify(id));
-  }, [id]);
+  function addCart() {
+    if (userInfo != null) {
+      localStorage.setItem("cartItem", JSON.stringify(data));
+    } else {
+      setErr(true);
+    }
+  }
 
   return (
     <div className="ProductScreen">
@@ -44,15 +38,13 @@ const [id, setId] = useState([]);
         ) : (
           <p>Sem estoque</p>
         )}
-        <button className="btn btn-primary" onClick={() => addCart(data)}>
+        <button className="btn btn-primary" onClick={addCart}>
           Comprar!
         </button>
-        {err ? (
-          <div class="alert alert-warning" role="alert">
+        {err? (<div class="alert alert-warning" role="alert">
             Efetue o login para adicionar um produto ao carrinho
-          </div>
-        ) : (
-          <p></p>
+        </div>):(
+        <p></p>
         )}
       </div>
     </div>
