@@ -1,20 +1,18 @@
-<<<<<<< HEAD
-import React, { useContext } from "react";
-import { cartContext } from "../Context";
+import React, { useEffect, useState } from "react";
 
 function Cart() {
+  const [cart, setCart] = useState([]);
 
-const { cart } = useContext(cartContext)
-=======
-import React, { useState } from "react";
+  useEffect(() => {
+    setCart(
+      localStorage.getItem("cart")
+        ? JSON.parse(localStorage.getItem("cart"))
+        : []
+    );
+  }, []);
+console.log()
 
-function Cart() {
-  const cart = localStorage.getItem("cartItem")
-    ? JSON.parse(localStorage.getItem("cartItem"))
-    : null;
->>>>>>> parent of 56cc6a0 (.)
-console.log(cart)
-  if (cart === null) {
+  if(cart.length === 0) {
     return (
       <div>
         <h1>Nenhum item no carrinho</h1>
@@ -24,15 +22,21 @@ console.log(cart)
   } else {
     return (
       <>
-        <div class="container">
-          <img src={cart.image} alt="" className="cart-img" />
-          <div class="row align-items-end">
-            <div class="col">{cart.name}</div>
-            <div class="col">{cart.price}</div>
-            <div class="col">{cart.descricao}</div>
+        {cart.map((products) => (
+          <div>
+            <div class="container" key={products.id}>
+              <img src={products.image} alt="" className="cart-img" />
+              <div class="row align-items-end">
+                <div class="col">{products.name}</div>
+                <div class="col">{products.price}</div>
+                <div class="col">{products.descricao}</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <button className="btn btn-success" id="margin">Finalizar Compra</button>
+        ))}
+        <button className="btn btn-success" id="margin">
+          Finalizar Compra
+        </button>
       </>
     );
   }

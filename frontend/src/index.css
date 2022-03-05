@@ -92,3 +92,6 @@ h2 {
   place-items: center;
   background-color: rgb(250, 233, 211);
 }
+.red {
+  color: red;
+}

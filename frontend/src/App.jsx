@@ -11,13 +11,15 @@ import EditarProduto from './Components/EditarProduto';
 import CriarUsuario from './Usuario/CriarUsuario';
 import FazerLogin from './Usuario/FazerLogin';
 import Cart from './Components/Cart';
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 function App() {
   const userInfo = localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo')):null
 
   const signoutHandler= () => {
     localStorage.removeItem('userInfo')
-    localStorage.removeItem('cartItem')
+    localStorage.removeItem('cart')
     window.location.href = 'http://localhost:3000/'
   }
   return (
@@ -55,6 +57,7 @@ function App() {
         <BiCopyright />
       </footer>
     </div>
+    <ToastContainer autoClose={3000} />
     </BrowserRouter>
   );
 }
