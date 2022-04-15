@@ -13,6 +13,7 @@ import FazerLogin from './Usuario/FazerLogin';
 import Cart from './Components/Cart';
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import PaymentScreen from './Components/PaymentScreen';
 
 function App() {
   const userInfo = localStorage.getItem('userInfo')? JSON.parse(localStorage.getItem('userInfo')):null
@@ -52,6 +53,7 @@ function App() {
         <Route path='/CriarConta' exact element={<CriarUsuario />}></Route>
         <Route path='/FacaoLogin' exact element={<FazerLogin />}></Route>
         <Route path='/Cart' exact element={<Cart />}></Route>
+        <Route path='/pay' element={<PaymentScreen />}></Route>
       </Routes>
       <footer>
         <BiCopyright />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const [cart, setCart] = useState([]);
@@ -10,9 +11,9 @@ function Cart() {
         : []
     );
   }, []);
-console.log()
+  console.log();
 
-  if(cart.length === 0) {
+  if (cart.length === 0) {
     return (
       <div>
         <h1>Nenhum item no carrinho</h1>
@@ -34,9 +35,11 @@ console.log()
             </div>
           </div>
         ))}
-        <button className="btn btn-success" id="margin">
-          Finalizar Compra
-        </button>
+        <Link to={'/pay'}>
+          <button className="btn btn-success" id="margin">
+            Finalizar Compra
+          </button>
+        </Link>
       </>
     );
   }

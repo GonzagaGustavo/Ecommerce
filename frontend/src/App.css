@@ -48,3 +48,32 @@ footer {
 #dropdown:hover .dropdown-content{
   display: block;
 }
+.grid {
+  display: grid;
+  place-items: center;
+}
+.pay {
+  display: flex;
+}
+hr {
+  width: 30%;
+}
+.sobrepor {
+  background-color: rgb(195, 197, 199);
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  height: 50%;
+  width: 50%;
+  animation: ha 1s ease-in-out;
+}
+@keyframes ha {
+  0% {
+    height: 0%;
+    opacity: 0;
+  }
+  100% {
+    height: 50%;
+    opacity: 1;
+  }
+}
